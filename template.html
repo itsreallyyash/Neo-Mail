@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Investment Update</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 32px 0 32px 0;
+            @bottom-center {
+                content: "© 2025 Neo Wealth | Private & Confidential";
+                color: #fff;
+                background: #2d204c;
+                font-family: 'Montserrat', Arial, sans-serif;
+                font-size: 12px;
+                padding-top: 6px;
+                padding-bottom: 6px;
+                width: 100%;
+                text-align: center;
+            }
+        }
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .main-container {
+            width: 680px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 36px 0 20px 0;
+            box-sizing: border-box;
+        }
+        .header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+        .logo-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .logo {
+            background: #232156;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 26px;
+            border-radius: 100px;
+            width: 72px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            font-size: 15px;
+            color: #494949;
+            margin-bottom: 4px;
+        }
+        .deal-title {
+            font-size: 22px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #6a4c93;
+            margin-bottom: 2px;
+        }
+        .company-name {
+            font-size: 23px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #2d2d2d;
+            margin-bottom: 0;
+        }
+        .decor-flower {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            opacity: 0.13;
+            width: 160px;
+        }
+        .flex-columns {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+            margin-top: 12px;
+        }
+        .left-col {
+            flex: 2;
+        }
+        .right-col {
+            flex: 1.4;
+            margin-top: 7px;
+        }
+        .section-block {
+            margin-bottom: 18px;
+        }
+        .section-title {
+            background: #232156;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 6px 18px 6px 13px;
+            border-radius: 5px 5px 0 0;
+            display: inline-block;
+            margin-bottom: 0;
+        }
+        .section-content {
+            background: #f6f6ff;
+            color: #2d2d2d;
+            font-size: 14px;
+            padding: 16px 18px 16px 14px;
+            border-radius: 0 0 9px 9px;
+            margin-bottom: 0;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+        .recent-updates-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .recent-updates-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 9px;
+            font-size: 14px;
+        }
+        .recent-updates-list li:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 7px;
+            height: 7px;
+            background: #6a4c93;
+            border-radius: 100%;
+        }
+        .summary-box {
+            background: #f5f1fb;
+            border-radius: 11px;
+            padding: 18px 22px 16px 22px;
+            font-size: 16px;
+            box-shadow: 0 2px 7px rgba(106,76,147,0.10);
+        }
+        .summary-label {
+            font-size: 12.5px;
+            color: #6a4c93;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-top: 17px;
+        }
+        .summary-value {
+            font-size: 16.5px;
+            color: #2d2d2d;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+        .summary-divider {
+            border: none;
+            border-top: 1px dashed #cdc5e3;
+            margin: 8px 0 8px 0;
+        }
+        /* Disclaimer Page Styling */
+        .disclaimer-container {
+            width: 680px;
+            margin: 0 auto;
+            padding: 40px 0 0 0;
+            min-height: 1000px;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .disclaimer-title {
+            color: #6a4c93;
+            font-size: 19px;
+            font-family: Montserrat,Arial,sans-serif;
+            font-weight: 600;
+            border-left: 3.5px solid #6a4c93;
+            padding-left: 9px;
+            margin-bottom: 32px;
+            margin-top: 70px;
+        }
+        .disclaimer-text {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 32px;
+            margin-top: 12px;
+            line-height: 1.6;
+        }
+        .contact-title {
+            font-size: 15px;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 42px;
+            margin-top: 44px;
+        }
+        .contact-logo-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 22px;
+        }
+        .contact-logo-img {
+            width: 62px;
+            margin-right: 24px;
+        }
+        .contact-logo-name {
+            color: #232156;
+            font-family: Montserrat,Arial,sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        .contact-address {
+            font-size: 14.5px;
+            color: #333;
+            margin-bottom: 22px;
+        }
+        .disclaimer-flower {
+            position: absolute;
+            top: 64px;
+            right: 80px;
+            opacity: 0.11;
+            width: 180px;
+        }
+    </style>
+</head>
+<body>
+    <!-- PAGE 1 -->
+    <div class="main-container">
+        <div class="header">
+            <div class="logo-block">
+                <div class="logo">neo</div>
+                <span style="color:#232156;font-size:13px;font-family:Montserrat,Arial,sans-serif;font-weight:600;margin-bottom:2px;">Do Good.</span>
+            </div>
+            {% if decor_flower %}
+            <img src="{{ decor_flower }}" alt="" class="decor-flower"/>
+            {% endif %}
+        </div>
+
+        <div class="subtitle">Investment Update</div>
+        <div class="deal-title">Deal 1:</div>
+        <div class="company-name">{{ company_name }}</div>
+
+        <div class="flex-columns">
+            <!-- Left Column -->
+            <div class="left-col">
+                <div class="section-block">
+                    <div class="section-title">| Borrower Profile</div>
+                    <div class="section-content">
+                        {{ borrower_profile | safe }}
+                    </div>
+                </div>
+                <div class="section-block">
+                    <div class="section-title">| Recent Updates</div>
+                    <div class="section-content">
+                        <ul class="recent-updates-list">
+                        {% for update in recent_updates %}
+                            <li>{{ update }}</li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Investment Summary -->
+            <div class="right-col">
+                <div class="section-title" style="margin-bottom:0">| Investment Summary</div>
+                <div class="summary-box">
+                    <div class="summary-label">Instrument</div>
+                    <div class="summary-value">{{ investment_summary["Instrument"] }}</div>
+                    <hr class="summary-divider"/>
+
+                    <div class="summary-label">IRR</div>
+                    <div class="summary-value">{{ investment_summary["IRR"] }}</div>
+                    <hr class="summary-divider"/>
+
+                    <div class="summary-label">Date of Investment</div>
+                    <div class="summary-value">{{ investment_summary["Date of Investment"] }}</div>
+                    <hr class="summary-divider"/>
+
+                    <div class="summary-label">Tenure</div>
+                    <div class="summary-value">{{ investment_summary["Tenure"] }}</div>
+                    <hr class="summary-divider"/>
+
+                    <div class="summary-label">Collateral Description</div>
+                    <div class="summary-value" style="font-size:13.2px;line-height:1.33;">
+                        {{ investment_summary["Collateral Description"] }}
+                    </div>
+                    <hr class="summary-divider"/>
+
+                    <div class="summary-label">Collateral Cover</div>
+                    <div class="summary-value">{{ investment_summary["Collateral Cover"] }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE BREAK -->
+    <div style="page-break-before: always"></div>
+
+    <!-- PAGE 2: DISCLAIMER & CONTACT -->
+    <div class="disclaimer-container">
+        {% if decor_flower %}
+        <img src="{{ decor_flower }}" alt="" class="disclaimer-flower"/>
+        {% endif %}
+
+        <div class="disclaimer-title">Disclaimer</div>
+        <div class="disclaimer-text">
+            This document is intended only for the personal use of the prospective investors/contributors (herein after referred to as the Clients) to whom it is addressed or delivered and must not be reproduced or redistributed in any form to any other person without any prior written consent of Neo Wealth Management (NWM). The document does not purport to be all-inclusive, nor does it contain exhaustive information which a prospective investor may desire for its decision making. The document is neither approved, certified nor its contents is verified by SEBI.<br><br>
+            The contents of this document are provisional and may be subject to change at the discretion of NWM. NWM reserves the right (but is not required) to correct any errors or omissions on the document. In the preparation of the material contained in this website/email/document, NWM has used information, calculation, cashflows that is publicly available, certain research reports including information developed in-house applying valid assumptions. NWM warrants that the contents of this document are true to the best of its knowledge, however, assume no liability for the relevance, accuracy, or completeness of the contents herein.<br>
+            For the entire terms and conditions, please refer to: https://www.neo-group.in/
+        </div>
+
+        <div class="contact-title">
+            For any queries, please contact:
+        </div>
+        <div class="contact-logo-row">
+            {% if contact_logo %}
+            <img src="{{ contact_logo }}" class="contact-logo-img" />
+            {% endif %}
+            <span class="contact-logo-name">Do Good.</span>
+        </div>
+        <div class="contact-address">
+            903, B-Wing, 9th Floor, Marathon FutureX, Mafatlal Mills Compound, N.M. Joshi Marg,<br>
+            Lower Parel Mumbai 400013 IN
+        </div>
+    </div>
+</body>
+</html>
