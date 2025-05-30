@@ -21,7 +21,7 @@ import io
 
 # Set page config
 st.set_page_config(
-    page_title="Investment Email Generator",
+    page_title="Ops Downselling Mail Sender",
     page_icon="📧",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -228,7 +228,7 @@ def send_email_with_attachments(to_email, subject, html_content, pdf_data, smtp_
 # ─── STREAMLIT APP ────────────────────────────────────────────────────────────
 
 def main():
-    st.title("📧 Investment Email Generator")
+    st.title("📧 Mail sender for downselling data")
     st.markdown("---")
     
     # Sidebar navigation
